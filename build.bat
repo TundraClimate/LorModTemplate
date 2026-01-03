@@ -10,4 +10,4 @@ call "%BASEDIR%\env.bat"
 "%MSBUILD%" "%BASEDIR%\src\%ID%.csproj"
 
 :: 成果物をsrcに移動
-move "%BASEDIR%\src\bin\Debug\%ID%.dll" "%BASEDIR%\src\%ID%.dll"
+move /Y "%BASEDIR%\src\bin\Debug\%ID%.dll" "%BASEDIR%\src\%ID%.dll"
