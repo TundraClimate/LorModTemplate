@@ -6,4 +6,6 @@ source "$PWD/.env"
 
 "$PWD/build.sh"
 
+mkdir "$PWD/Invitation/Assemblies/"
+
 mv "$PWD/src/$ID.dll" "$PWD/Invitation/Assemblies/$ID.dll"
