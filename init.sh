@@ -6,7 +6,13 @@ source "$PWD/.env"
 
 ln -s "$PWD/Invitation" "$LOR_MOD_DIR/$ID"
 
-mkdir "$PWD/src/"
+mkdir -p "$PWD/src/"
+mkdir -p "$PWD/Invitation/Resource/CharacterSkin/"
+mkdir -p "$PWD/Invitation/Resource/CombatPageArtwork/"
+mkdir -p "$PWD/Invitation/Resource/MotionSound/"
+mkdir -p "$PWD/Invitation/Resource/StoryBgm/"
+mkdir -p "$PWD/Invitation/Resource/StoryBgSprite/"
+mkdir -p "$PWD/Invitation/Resource/StoryStanding/"
 
 echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <NormalInvitation xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">

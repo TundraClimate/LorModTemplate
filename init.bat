@@ -10,6 +10,12 @@ call "%BASEDIR%\env.bat"
 mklink /D "%LOR_MOD_DIR%\%ID%\" "%BASEDIR%\Invitation\"
 
 mkdir "%BASEDIR%\src"
+mkdir "%BASEDIR%\Invitation\Resource\CharacterSkin"
+mkdir "%BASEDIR%\Invitation\Resource\CombatPageArtwork"
+mkdir "%BASEDIR%\Invitation\Resource\MotionSound"
+mkdir "%BASEDIR%\Invitation\Resource\StoryBgm"
+mkdir "%BASEDIR%\Invitation\Resource\StoryBgSprite"
+mkdir "%BASEDIR%\Invitation\Resource\StoryStanding"
 
 echo Invitation mklink successfully
 
