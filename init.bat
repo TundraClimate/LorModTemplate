@@ -22,7 +22,7 @@ echo(  ^<Version^>1.1^</Version^>
 echo(  ^<Workshop^>
 echo(    ^<ID^>%ID%^</ID^>
 echo(    ^<Title^>%WORKSHOP_TITLE%^</Title^>
-echo(    ^<Description^>WORKSHOP_DESC^</Description^>
+echo(    ^<Description^>%WORKSHOP_DESC%^</Description^>
 echo(    ^<Tag /^>
 echo(    ^<PreviewImage^>%WORKSHOP_THUMBNAIL%^</PreviewImage^>
 echo(  ^</Workshop^>
