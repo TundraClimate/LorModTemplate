@@ -11,7 +11,6 @@ Unixは`init.sh`
 # Harmonyを使用する場合
 
 - Init.cs > コメントアウトを削除する(`/*`と`*/`**のみ**を削除する)
-- PatchClass.cs > 同上 コメントアウトを削除
 - ${ID}.csproj > XMLコメントアウトを削除(`<!--`と`-->`**のみ**を削除する)
 - `libs/`に`0Harmony.dll`をダウンロードしてくる
   - URL >> https://github.com/pardeike/Harmony/releases

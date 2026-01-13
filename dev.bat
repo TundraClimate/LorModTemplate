@@ -1,10 +1,9 @@
 @echo off
 
-:: いつもの
+:: テンプレ
 set "BASEDIR=%~dp0"
-
-:: 設定情報の読み込みだよ
 call "%BASEDIR%\env.bat"
+call "%BASEDIR%\usr.bat"
 
 :: ビルドする
 call "%BASEDIR%\build.bat"
