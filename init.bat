@@ -49,6 +49,20 @@ if not exist "%LOR_DIR%" (
 )
 
 echo.
+echo Check %%MSBUILD%% validity
+
+if not exist "%MSBUILD%" (
+    echo Error: Found the invalid MSBUILD
+    echo Possible causes: Not installed .NET framework, Found VisualStudio MSBUILD only,
+    echo To fix: Install .NET framework v4.8 by installer.
+
+    pause
+    exit /b
+) else (
+    echo Find the valid MSBUILD: Passed
+)
+
+echo.
 echo Create symlink to \Mods\
 
 :: ローカルのMods/にリンクを貼る
