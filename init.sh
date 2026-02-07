@@ -3,7 +3,46 @@
 cd $(dirname $0)
 source "$PWD/.env"
 
-echo "INITIALIZED ENV"
+echo "Check \$LOR_DIR validity"
+
+if [ ! -d "$LOR_DIR" ]; then
+	echo Error: Found the invalid LOR_DIR
+	echo To fix: Replace the LOR_DIR= path that invalid 'LibraryOfRuina_Data' foldor into the accurate path
+	echo Find accurate path: Steam application \> 'Library of Ruina' \> Configure \> Management \> Show Local files
+	echo
+	echo ...and Try again here
+
+	exit
+else
+	echo Find the valid LOR_DIR: Passed
+
+	if [ ! -d "$LOR_DATA_DIR" ]; then
+		echo Error: Found the invalid LOR_DATA_DIR
+		echo To fix: Replace the LOR_DATA_DIR= path that invalid 'LibraryOfRuina_Data/Managed' folder into the accurate path
+		echo Find accurate path: Steam application \> 'Library of Ruina' \> Configure \> Management \> Show Local files
+		echo
+		echo ...and Try again here
+
+		exit
+	fi
+
+	echo Find the valid LOR_DATA_DIR: Passed
+
+	if [ ! -d "$LOR_MOD_DIR" ]; then
+		echo Error: Found the invalid LOR_DATA_DIR
+		echo To fix: Replace the LOR_MOD_DIR= path that invalid 'LibraryOfRuina_Data/Mods' folder into the accurate path
+		echo Find accurate path: Steam application \> 'Library of Ruina' \> Configure \> Management \> Show Local files
+		echo
+		echo ...and Try again here
+
+		exit
+	fi
+
+	echo Find the valid LOR_MOD_DIR: Passed
+fi
+
+echo
+echo Create symlink to /Mods/
 
 if [ ! -d "$LOR_MOD_DIR/$ID" ]; then
 	ln -s "$PWD/Invitation" "$LOR_MOD_DIR/$ID"
@@ -12,6 +51,9 @@ if [ ! -d "$LOR_MOD_DIR/$ID" ]; then
 else
 	echo "SYMLINK ALREADY CREATED"
 fi
+
+echo
+echo Start copying the local assemblies
 
 if [ ! -d "$PWD/src/libs/" ]; then
 	mkdir -p "$PWD/src/libs/"
