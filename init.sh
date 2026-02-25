@@ -3,6 +3,22 @@
 cd $(dirname $0)
 source "$PWD/.env"
 
+echo Check dotnet cli
+
+DOTNET_INSTALLED=$(LANG=en_US.UTF-8 which dotnet)
+
+if [ "$DOTNET_INSTALLED" == "dotnet not installed" ]; then
+	echo "Error: dotnet cli not installed"
+	echo "To fix: Download dotnet cli from "https://dotnet.microsoft.com/download" then install it, and reboot a computer"
+	echo
+	echo "...and Try again here"
+
+	exit
+else
+	echo "Find the dotnet cli: Passed"
+fi
+
+echo
 echo "Check \$LOR_DIR validity"
 
 if [ ! -d "$LOR_DIR" ]; then
@@ -39,16 +55,6 @@ else
 	fi
 
 	echo "Find the valid LOR_MOD_DIR: Passed"
-fi
-
-echo
-echo "Check \$MSBUILD validity"
-
-if [ ! -e "$MSBUILD" ]; then
-	echo "Error: Found the invalid MSBUILD"
-	echo "To fix: Install .NET framework for wine"
-else
-	echo "Find the valid MSBUILD: Passed"
 fi
 
 echo
