@@ -6,6 +6,22 @@ set "BASEDIR=%~dp0"
 call "%BASEDIR%\env.bat"
 call "%BASEDIR%\usr.bat"
 
+echo Check dotnet cli
+
+where dotnet >nul 2>&1
+if errorlevel 1 (
+    echo Error: dotnet cli not installed
+    echo To fix: Download dotnet cli from "https://dotnet.microsoft.com/download" then install it, and reboot a computer
+    echo.
+    echo ...and Try again here
+
+    pause
+    exit /b
+) else (
+    echo Find the dotnet cli: Passed
+)
+
+echo.
 echo Check %%LOR_DIR%% validity
 
 :: %%LOR_DIR%%が正規かの確認
@@ -46,20 +62,6 @@ if not exist "%LOR_DIR%" (
     )
 
     echo Find the valid LOR_MOD_DIR: Passed
-)
-
-echo.
-echo Check %%MSBUILD%% validity
-
-if not exist "%MSBUILD%" (
-    echo Error: Found the invalid MSBUILD
-    echo Possible causes: Not installed .NET framework, Found VisualStudio MSBUILD only,
-    echo To fix: Install .NET framework v4.8 by installer.
-
-    pause
-    exit /b
-) else (
-    echo Find the valid MSBUILD: Passed
 )
 
 echo.
