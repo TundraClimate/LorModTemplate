@@ -71,17 +71,12 @@ fi
 echo
 echo "Start copying the local assemblies"
 
-if [ ! -d "$PWD/src/libs/" ]; then
-	mkdir -p "$PWD/src/libs/"
-	cp "$LOR_DATA_DIR/System.dll" "$PWD/src/libs/System.dll"
-	cp "$LOR_DATA_DIR/System.Core.dll" "$PWD/src/libs/System.Core.dll"
-	cp "$LOR_DATA_DIR/mscorlib.dll" "$PWD/src/libs/mscorlib.dll"
-	cp "$LOR_DATA_DIR/Assembly-CSharp.dll" "$PWD/src/libs/Assembly-CSharp.dll"
+cp "$LOR_DATA_DIR/System.dll" "$PWD/src/libs/System.dll"
+cp "$LOR_DATA_DIR/System.Core.dll" "$PWD/src/libs/System.Core.dll"
+cp "$LOR_DATA_DIR/mscorlib.dll" "$PWD/src/libs/mscorlib.dll"
+cp "$LOR_DATA_DIR/Assembly-CSharp.dll" "$PWD/src/libs/Assembly-CSharp.dll"
 
-	echo "LOCAL ASSEMBLIES SUCCESSFULLY COPIED"
-else
-	echo "LOCAL ASSEMBLIES ALREADY COPIED"
-fi
+echo "LOCAL ASSEMBLIES SUCCESSFULLY COPIED"
 
 if [ -e "$PWD/src/.csproj" ]; then
 	mv "$PWD/src/.csproj" "$PWD/src/$ID.csproj"
